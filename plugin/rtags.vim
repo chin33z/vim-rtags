@@ -804,6 +804,7 @@ endfunction
 function! rtags#FindRefs()
     let args = {
                 \ '-e' : '',
+                \ '--kind-filter' : '*RefExpr',
                 \ '-r' : rtags#getCurrentLocation() }
 
     call rtags#ExecuteThen(args, [function('rtags#DisplayResults')])
